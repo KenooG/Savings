@@ -1,5 +1,157 @@
-.chuj{
-  width: 200px;
-  height: 200px;
-  background-color: rebeccapurple;
+@import "Normalize";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+$text: #050802;
+$background: #e3f3d8;
+$primary: #83cb52;
+$secondary: #55cc48;
+$accent: #b13535;
+
+
+.Overlay{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
+.MainBox{
+  background-color: $background;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  position: sticky;
+  top: 0 ;
+
+
+
+
+  .logo{
+    width: 350px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 35px;
+  }
+
+.logoIcon{
+
+width: 75px;
+  height: 75px;
+  background: url("../source/swinka.png") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+
+
+}
+
+  .logoNameMain{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-45px);
+
+  }
+
+  .logoName1{
+    color: $primary;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+
+  }
+
+
+  .logoName2{
+    color: $secondary;
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+
+
+  }
+
+.nav{
+  width: 400px;
+  height: 50px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+.nav_click{
+
+  text-decoration: none;
+  font-size: 1.6rem;
+  color:$text;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+}
+
+}
+
+.UnderHeader{
+  width: 100vw;
+  height:600px;
+  background: url("../source/saving.jpg") ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .UnderHeaderM{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+
+.opis{
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+
+  text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+}
+.join{
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: $text;
+  font-size: 2rem;
+  display: inline-block;
+  padding: 10px 40px;
+  background-color: $primary;
+  text-align: center;
+  border-radius: 40px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+
+
+
+}
+
+
+}
+
+
+
+
