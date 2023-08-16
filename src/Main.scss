@@ -9,14 +9,13 @@ $accent: #b13535;
 
 .Overlay{
   width: 100vw;
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
 
 }
 .MainBox{
-  background-color: $background;
+  background-image: linear-gradient(32deg,#EBCD99, #EBE3C9);
   width: 100vw;
   height: 100px;
   display: flex;
@@ -25,6 +24,7 @@ $accent: #b13535;
   border: 1px solid #333;
   position: sticky;
   top: 0 ;
+  z-index: 30;
 
 
 
@@ -82,21 +82,80 @@ width: 75px;
 
 .nav{
   width: 400px;
-  height: 50px;
+  height: 100%;
   display: flex;
   gap: 25px;
   align-items: center;
+  margin-right: 50px;
+
+
 .nav_click{
 
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color:$text;
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  }
+
 }
 }
 
-}
+  .nav_btn{
+    width: 200px;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 50px; // Wysokość kreski
+      width: 2px; // Szerokość kreski
+      background-color: black;
+      transform: translateY(-50%);
+      opacity: 0; // Ukryj kreski domyślnie
+      transition: opacity 0.3s ease; // Dodaj płynne przejście
+    }
+
+    &::before {
+      left: 0;
+      margin-left: -10px; // Odległość kreski od guzika
+    }
+
+    &::after {
+      right: 0;
+      margin-right: -10px; // Odległość kreski od guzika
+    }
+
+    &:hover {
+      &::before, &::after {
+        opacity: 1; // Pokaż kreski po najechaniu myszką
+
+      }
+      &:hover {
+        cursor: pointer;
+        .nav_click{
+          color: $secondary;
+
+        }
+      }
+    }
+
+
+
+  }
+
+
+
+
+
 
 .UnderHeader{
   width: 100vw;
@@ -108,6 +167,8 @@ width: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 5px solid #103A1D;
+
   .UnderHeaderM{
     display: flex;
     justify-content: center;
@@ -129,29 +190,382 @@ width: 75px;
           -1px 1px 0 #000,
           1px 1px 0 #000;
 }
-.join{
+.join {
   margin-top: 30px;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: $text;
+  color: black;
   font-size: 2rem;
   display: inline-block;
   padding: 10px 40px;
-  background-color: $primary;
+  background-image: linear-gradient(32deg,#EBCD99, #EBE3C9);
   text-align: center;
-  border-radius: 40px;
-  border: 2px solid black;
+  border-radius: 10px;
+  border: 1.5px solid black;
   cursor: pointer;
   transition: background-color 0.3s;
 
+}
+
+  .join:hover {
+    background-color: $primary;
+    color: white; /* zmiana koloru tekstu na kolor pierwotnego tła */
+    transform: scale(1.02); /* lekkie powiększenie przycisku */
+    border-color: black;
+  }
+
+  .join:active {
+    transform: scale(0.95); /* efekt "wciśnięcia" przycisku */
+    background-color: darken($primary, 10%); /* lekko ciemniejsza wersja pierwotnego koloru tła */
+  }
+
+}
+.Offer{
+  height: 1400px;
+  width: 100vw;
+  background-image: url(../source/liscie.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+.Offer_Main{
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 65px;
+.Offer_section{
+  height: 350px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  background-color: white;
+  border-radius: 20px;
+  align-items: center;
+
+  .Offer_Sl_1{
+    width: 250px;
+    height: 250px;
+    background-image: url(../source/klepsydra.jpg)   ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    margin-left: 40px;
+
+
+  }
+  .Offer_SR{
+    width: 800px;
+    margin-right: 45px;
+    position: relative;
+
+
+
+
+
+.Offer_Header{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  margin-top: 0;
+
+
+}
+.Offer_text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+
+
+}
+
+  }
 
 
 
 }
 
 
+
 }
 
 
 
+}
+.Offer_MaiNN{
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.5rem;
+  margin-top: 65px;
+  color: white;
+  text-shadow:
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+  position: relative;
+  &::before, &::after {
+    content: "";
+    position: absolute;
 
+    height: 50px; // Wysokość kreski
+    width: 50px; // Szerokość kreski
+    transform: translateY(-50%);
+    background-image: url(../source/more.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+  }
+  &::after {
+
+  top: 15%;
+    left: 363px;
+    rotate: -90deg;
+  }
+  &::before {
+
+    top: 14%;
+    left: -87px;
+    rotate: 90deg;
+  }
+
+
+}
+.Offer_section_2{
+  display: flex;
+  flex-direction: row-reverse;
+
+  .Offer_Sl{
+    margin-right: 40px;
+    margin-left: 0;
+
+
+
+
+  }
+
+  .Offer_SR_2{
+    margin-right: 0;
+    margin-left: 60px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 150px;
+      width: 3px;
+      background-color: black;
+      transform: translateY(-50%);
+      right: -75px;
+      border-radius: 1000px;
+
+
+
+
+    }
+
+
+
+  }
+
+  .Offer_Sl_2{
+    width: 225px;
+    height: 225px;
+    background-image: url(../source/preference.png)   ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 60px;
+
+
+
+
+  }
+
+
+}
+
+.Offer_SR_1 {
+  width: 800px;
+  margin-right: 45px;
+  position: relative;
+
+  &::before, {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 150px;
+    width: 3px;
+    background-color: black;
+    transform: translateY(-50%);
+    left: -33px;
+    border-radius: 1000px;
+
+
+  }
+}
+
+.Offer_section3{
+  height: 350px;
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+.Offer_Sll{
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+
+}
+
+.Offer_SRR{
+
+  width: 800px;
+  height: 350px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  .Offer_SR{
+    width: 800px;
+    margin-right: 45px;
+    position: relative;
+    margin-left: 45px;
+
+    .Offer_Header{
+      font-family: 'Roboto', sans-serif;
+      font-size: 2.5rem;
+      margin-top: 0;
+
+
+    }
+    .Offer_text{
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem;
+      width: 700px;
+
+
+    }
+
+  }
+
+}
+
+
+
+}
+
+.Offer_Sl_3{
+  width: 300px;
+  height: 300px;
+  background-image: url(../source/59997.jpg)   ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25%;
+
+
+}
+
+.Footer{
+  height: 150px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(45deg, white, lightgreen);
+  .footer_box{
+    width: 400px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer_upbox{
+      width: 250px;
+      height: 75px;
+      display: flex;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+
+
+
+    .icon1{
+      width: 50px;
+      height: 50px;
+      background-image: url(../source/instagram.png)   ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:hover{
+        cursor: pointer;
+      }
+
+    }
+    .icon2{
+      width: 50px;
+      height: 50px;
+      background-image: url(../source/facebook.png)   ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      &:hover{
+        cursor: pointer;
+      }
+
+    }
+      .icon3{
+        width: 50px;
+        height: 50px;
+        background-image: url(../source/twitter.png)   ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &:hover{
+          cursor: pointer;
+        }
+
+      }
+
+
+    }
+  }
+
+.footer_downbox{
+  margin-top: 10px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+.footer_text{
+  text-decoration: none;
+  color: black;
+
+
+
+}
+}
+
+}
