@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import ErrorWindow from "./components/errorwindow.jsx";
+import SuccesLogin from "./components/succeslogin.jsx";
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
   const [hasError, setHasError] = useState(false);
+  const [hasSucces, setHasSucces] = useState(false);
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -15,8 +17,16 @@ const Register = () => {
     try {
       const response = await axios.post('http://localhost:8000/signup', { name, email, pass });
       if (response.status === 201) {
-        navigate("/login");
+        setHasSucces(true);
+        setTimeout(() => {
+
+          navigate("/login");
+        }, 2000); // Czekaj 2000 milisekund, czyli 2 sekundy
       }
+
+
+
+
     } catch (error) {
       setHasError(true);
     }
@@ -32,6 +42,7 @@ const Register = () => {
           <label className={'label-form'} htmlFor={'name'}>
             Full Name
           </label>
+          {hasSucces && <SuccesLogin> Konto </SuccesLogin>}
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
