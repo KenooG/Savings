@@ -6,7 +6,7 @@ const ErrorWindow = () => {
 
     return(
         <>
-       <h1 className="error">Email już użyty</h1>
+       <p className="error">email already in use</p>
 
         </>
 
