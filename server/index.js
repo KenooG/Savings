@@ -51,6 +51,41 @@ app.post('/signup', async (req, res) => {
   }
 });
 
+app.post('/login', async (req, res) => {
+  const client = new MongoClient(uri);
+  const { email, pass } = req.body;
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+
+    const sanitizedEmail = email.toLowerCase();
+    const user = await users.findOne({ email: sanitizedEmail });
+
+    if (!user) {
+      return res.status(404).send('user not found');
+    }
+
+    const isPasswordCorrect = await bcrypt.compare(pass, user.hashed_password);
+    if (!isPasswordCorrect) {
+      return res.status(401).send('invalid password');
+    }
+
+    const token = jwt.sign({ id: user.user_id }, sanitizedEmail, {
+      expiresIn: 60 * 24,
+    });
+
+    res.status(200).json({ token, userId: user.user_id });
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  }
+});
+
+
+
 
 
 app.listen(port, () => {
