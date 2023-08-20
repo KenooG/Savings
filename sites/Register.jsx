@@ -43,6 +43,7 @@ const Register = () => {
           <label className={'label-form'} htmlFor={'email'}>
             email
           </label>
+
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -54,6 +55,7 @@ const Register = () => {
           <label className={'label-form'} htmlFor={'password'}>
             password
           </label>
+
           <input
             value={pass}
             onChange={(e) => setPass(e.target.value)}
@@ -62,6 +64,7 @@ const Register = () => {
             id={'password'}
             name={'password'}
           />
+          {hasError && <ErrorWindow> Cos nie działa </ErrorWindow>}
           <button className={'link-btn-3'} type={'submit'}>
             Register
           </button>
@@ -76,7 +79,7 @@ const Register = () => {
         </a>
       </div>
     </div>
-        {hasError && <ErrorWindow> Cos nie działa </ErrorWindow>}
+
       </>
   );
 };
