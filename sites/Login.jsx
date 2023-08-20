@@ -10,18 +10,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
 
 
-      try {
-          const response = await axios.post('http://localhost:8000/login', {email, pass});
-          const succes = response.status === 201
-          if(succes) navigate("/site")
-
-
-      } catch (error) {
-          console.log(error);
-      }
-
-
-
 
 
       e.preventDefault()

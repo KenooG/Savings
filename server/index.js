@@ -5,8 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-const uri =
-  'mongodb+srv://seba:Admin@cluster0.1pnfxw9.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://seba:Admin@cluster0.1pnfxw9.mongodb.net/?retryWrites=true&w=majority';
 
 const app = express();
 app.use(express.json());
@@ -16,19 +15,7 @@ app.get('/', (req, res) => {
   res.json('test');
 });
 
-app.get('/users', async (req, res) => {
-  const client = new MongoClient(uri);
-  try {
-    await client.connect();
-    const database = client.db('app-data');
-    const users = database.collection('users');
 
-    const returnedUsers = await users.find().toArray();
-    res.json(returnedUsers);
-  } finally {
-    await client.close();
-  }
-});
 
 app.post('/signup', async (req, res) => {
   const client = new MongoClient(uri);
@@ -64,34 +51,7 @@ app.post('/signup', async (req, res) => {
   }
 });
 
-app.post('/login', async (req, res) => {
-  const client = new MongoClient(uri);
-  const { email, pass } = req.body;
 
-  try {
-    await client.connect();
-    const database = client.db('app-data');
-    const users = database.collection('users');
-    const user = await users.findOne({ email });
-
-    if (!user) {
-      return res.status(400).json('Email not found');
-    }
-
-    const correctPass = await bcrypt.compare(pass, user.hashed_password);
-
-    if (correctPass) {
-      const token = jwt.sign(user, email, {
-        expiresIn: 60 * 24,
-      });
-      return res.status(201).json({ token });
-    }
-    return res.status(400).json('Invalid password');
-  } catch (err) {
-    console.log(err);
-    return res.status(500).json('Internal Server Error');
-  }
-});
 
 app.listen(port, () => {
   console.log('server is running on port ' + port);

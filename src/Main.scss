@@ -590,8 +590,6 @@ $accent: #b13535;
   flex-direction: column;
 
 
-
-
   .label-form {
     text-align: left;
     padding: 0.25rem 0;
@@ -609,19 +607,19 @@ $accent: #b13535;
   }
 
 
-  button{
-   border:none;
+  button {
+    border: none;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;
-    color: rgb(51, 139, 147) ;
+    color: rgb(51, 139, 147);
     font-family: 'Roboto', sans-serif;
 
 
   }
 
-  .link-btn{
+  .link-btn {
     margin-top: 10px;
     background: none;
     color: white;
@@ -630,7 +628,7 @@ $accent: #b13535;
 
   }
 
-  .link-btn-2{
+  .link-btn-2 {
     margin-top: 10px;
     background: none;
     color: white;
@@ -643,7 +641,7 @@ $accent: #b13535;
 
 }
 
-.auto-form-container{
+.auto-form-container {
   padding: 5rem;
   border: 1px solid white;
   border-radius: 10px;
@@ -651,7 +649,7 @@ $accent: #b13535;
 
 }
 
-.h2-form{
+.h2-form {
   margin-bottom: 70px;
   margin-top: 0;
   font-size: 2.5rem;
@@ -660,11 +658,20 @@ $accent: #b13535;
 }
 
 
-
-.link-btn-3{
+.link-btn-3 {
   &:hover {
     animation: bg-fade-in 0.01s forwards;
     color: white;
   }
 }
 
+.error {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}

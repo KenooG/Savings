@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import ErrorWindow from "./components/errorwindow.jsx";
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
-  let navigate = useNavigate()
+  const [hasError, setHasError] = useState(false);
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/signup', {name, email, pass});
-      const succes = response.status === 201
-      if(succes) navigate("/login")
-
-
+      const response = await axios.post('http://localhost:8000/signup', { name, email, pass });
+      if (response.status === 201) {
+        navigate("/login");
+      }
     } catch (error) {
-      console.log(error);
+      setHasError(true);
     }
-
   };
 
   return (
+      <>
+
     <div className={'auto-form-box'}>
       <div className={'auto-form-container'}>
         <h2 className={'h2-form'}>Register</h2>
@@ -75,6 +76,8 @@ const Register = () => {
         </a>
       </div>
     </div>
+        {hasError && <ErrorWindow> Cos nie działa </ErrorWindow>}
+      </>
   );
 };
 
