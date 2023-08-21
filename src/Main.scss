@@ -766,13 +766,13 @@ $accent: #b13535;
     color: white;
     font-size: 1.5rem;
     word-spacing: 6px;
-    margin-left: 60px;
+    margin-left: 100px;
     &::before {
       content: "";
       position: absolute;
       top: 0;
       bottom: 0;
-      transform: translateX(-20px);
+      transform: translateX(-60px);
       width: 1px;
       height: 123px;
       background-color: white; // biała kreska
@@ -814,6 +814,7 @@ $accent: #b13535;
   background-image: linear-gradient(to bottom, rgb(51, 139, 147), rgb(182, 244, 146));
   border-right: 1px solid white;
   position: relative;
+
   &::before {
     content: "";  // To jest konieczne dla pseudoelementu
     position: absolute;
@@ -823,7 +824,55 @@ $accent: #b13535;
     height: 1px;
     background-color: white;  // Kolor pseudoelementu, który działa jako "sztuczny" border
   }
+  a {
+    text-decoration: none;
 
+  }
+
+.btn{
+  display: flex;
+  width: 200px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    .text {
+
+
+    }
+
+    background-color: rgba(211, 211, 211, 0.1);
+    border-radius: 30px;
+
+  }
+
+
+.text{
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+
+
+
+}
+}
+  .leftm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    width: 221px;
+    height: 100%;
+    margin-top: 70px;
+
+    .btn1{
+
+      background-color: rgba(211, 211, 211, 0.1);
+      border-radius: 30px;
+
+    }
+  }
 
 
 
@@ -836,10 +885,23 @@ $accent: #b13535;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .rightMain{
+    width: 1550px;
+    height: 900px;
+    background-color: #fff;
+    border-radius: 30px;
+    
+  }
 
 
 }
 
+  
+  
 }
 
 
