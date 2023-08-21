@@ -1,8 +1,33 @@
+import SiteHeader from "./components/SiteComponents/SiteHeader.jsx";
+
+
+
+
 const Site = () => {
-    return
 
 
-    PIZDA
+
+
+
+    return(
+        <>
+
+            <div className="Overlay">
+                <SiteHeader/>
+
+
+
+            </div>
+
+
+
+
+        </>
+
+
+
+    )
+
 
 
 };
