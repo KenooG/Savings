@@ -863,7 +863,7 @@ $accent: #b13535;
     align-items: center;
     gap: 50px;
     width: 221px;
-    height: 100%;
+    height: calc(100% - 70px);
     margin-top: 70px;
 
     .btn1{
