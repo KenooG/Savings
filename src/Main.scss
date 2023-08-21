@@ -701,12 +701,13 @@ $accent: #b13535;
 
 .Site_MainBox{
   background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
-  width: 100vw;
+  width: calc(100vw - 2px);
   height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #333;
+  border-bottom: 1px solid white;
 .Hello_Box{
   display: flex;
   width: 500px;
@@ -773,6 +774,7 @@ $accent: #b13535;
       bottom: 0;
       transform: translateX(-20px);
       width: 1px;
+      height: 123px;
       background-color: white; // biała kreska
     }
   }
@@ -798,9 +800,46 @@ $accent: #b13535;
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
 
-
   }
 }
+}
+.Main_UnderHeader{
+  width: 100vw;
+  height: calc(100vh - 122px);
+  display: flex;
+
+.left{
+  width: 221px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, rgb(51, 139, 147), rgb(182, 244, 146));
+  border-right: 1px solid white;
+  position: relative;
+  &::before {
+    content: "";  // To jest konieczne dla pseudoelementu
+    position: absolute;
+    top: -1.5px;  // Dostosuj tę wartość, aby przesunąć border wyżej
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: white;  // Kolor pseudoelementu, który działa jako "sztuczny" border
+  }
+
+
+
+
 
 }
+.right{
+  width: 1700px;
+  height: 100%;
+  background-image: url(../source/brown.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+}
+
+}
+
 
