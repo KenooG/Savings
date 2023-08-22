@@ -39,6 +39,7 @@ app.post('/signup', async (req, res) => {
       name: name,
       email: sanitizedEmail,
       hashed_password: hashedPassword,
+      value: 0,
     };
 
     const insertedUser = await users.insertOne(data);
