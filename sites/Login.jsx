@@ -13,6 +13,7 @@ const Login = () => {
   const [pass, setPass] = useState('');
   let navigate = useNavigate()
     const [hasError, setHasError] = useState(false);
+    const [name, setName] = useState('');
 
   const handleSubmit = async (e) => {
 
@@ -24,6 +25,7 @@ const Login = () => {
               // Zapisz token w odpowiednim miejscu (np. w localStorage lub w stanie aplikacji)
               localStorage.setItem('token', response.data.token);
               localStorage.setItem('userId', response.data.userId);
+              localStorage.setItem('name', response.data.name);
 
 
               navigate("/site"); // Przekieruj użytkownika do głównego panelu/dashboardu po pomyślnym zalogowaniu

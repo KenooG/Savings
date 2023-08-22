@@ -710,7 +710,7 @@ $accent: #b13535;
   border-bottom: 1px solid white;
 .Hello_Box{
   display: flex;
-  width: 500px;
+  width: 700px;
   height: 100px;
   margin-left: 60px;
   align-items: center;
@@ -765,8 +765,9 @@ $accent: #b13535;
     font-family: 'Roboto', sans-serif;
     color: white;
     font-size: 1.5rem;
-    word-spacing: 6px;
+    word-spacing: 3px;
     margin-left: 100px;
+
     &::before {
       content: "";
       position: absolute;

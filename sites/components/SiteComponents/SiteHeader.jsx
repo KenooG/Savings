@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
 
+
 const SiteHeader = () => {
 
-
+    const userName = localStorage.getItem('name');
         const [currentTime, setCurrentTime] = useState(new Date());
 
         useEffect(() => {
@@ -27,7 +28,7 @@ const SiteHeader = () => {
                         <div className="logodown"><p className="text">Smart Saver</p></div>
                     </div>
                     </a>
-                    <p className="Hello">Welcome Sebastian</p>
+                    <p className="Hello">Welcome {userName} </p>
                 </div>
                 <div className="Clock">
                     <p className="Time">Local Time :</p>
