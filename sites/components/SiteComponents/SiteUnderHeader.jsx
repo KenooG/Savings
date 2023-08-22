@@ -1,4 +1,4 @@
-
+import Challanges from "./UnderHeaderComponents/Challanges.jsx";
 
 
 const SiteUnderHeader = () => {
@@ -33,6 +33,8 @@ const SiteUnderHeader = () => {
                </div>
                <div className="right">
               <div className="rightMain">
+                  <Challanges/>
+
 
               </div>
                </div>
