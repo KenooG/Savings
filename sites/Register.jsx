@@ -40,7 +40,7 @@ const Register = () => {
         <h2 className={'h2-form'}>Register</h2>
         <form className={'register-form'} onSubmit={handleSubmit}>
           <label className={'label-form'} htmlFor={'name'}>
-            Full Name
+            Nickname
           </label>
           {hasSucces && <SuccesLogin> Konto </SuccesLogin>}
           <input
@@ -48,7 +48,7 @@ const Register = () => {
             onChange={(e) => setName(e.target.value)}
             name={'name'}
             id={'name'}
-            placeholder={'John Smith'}
+            placeholder={'Samy42'}
           />
 
           <label className={'label-form'} htmlFor={'email'}>
