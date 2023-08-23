@@ -1170,12 +1170,7 @@ span{
 
 
   }
-  .DownRight{
-    width: 500px;
-    height: 500px;
-    background-color: purple;
 
-  }
 
 
 }
@@ -1212,4 +1207,49 @@ span{
 }
   }
 }
+.DownRight {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+}
+
+.progress-container {
+  width: 550px;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 80px;
+}
+
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15%; /* Początkowa wysokość */
+  background-color: #4caf50; /* Kolor paska */
+  transition: height 0.5s ease;
+  z-index: 1; /* Pasek jest poniżej obrazu samochodu */
+}
+
+.car-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../source/car.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2; /* Obraz samochodu jest na wierzchu */
+}
+
+.Currenttext{
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 40px;
+  font-weight: bold;
+}

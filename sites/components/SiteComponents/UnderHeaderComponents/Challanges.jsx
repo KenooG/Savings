@@ -7,6 +7,7 @@ import axios from "axios";
 
 const Challanges = () => {
 
+
     const [value, SetValue] = useState(0);
     const [inputValue, setInputValue] = useState('');
     useEffect(() => {
@@ -54,8 +55,9 @@ const Challanges = () => {
  };
 
 
-
-
+    const targetValue = 10000; // Wartość docelowa
+    const remainingValue = targetValue - value;
+    const percentageSaved = ((value / targetValue) * 100).toFixed(2);
 
         return (
             <>
@@ -63,7 +65,7 @@ const Challanges = () => {
                     <p className="SavingGoal1">You are saving for : Dream Car</p>
                     <div className="SavingGoal2">
                         <p className="SG">Progress done : </p>
-                        <p className="SG2">20%</p>
+                        <p className="SG2">{percentageSaved}%</p>
                     </div>
                 </div>
                 <div className="ChallangeDown">
@@ -85,13 +87,13 @@ const Challanges = () => {
                                 <input  value={inputValue} onChange={(e) => setInputValue(e.target.value)} type="number" id="savings" name="savings" placeholder="0.00$"/>
                                 <span className="dollar-sign">$</span>
                             </div>
-                            <button type="submit">Add</button>
+                            <button type="submit" disabled={!inputValue}>Add</button>
                             </form>
                         </div>
                         </div>
                             <div className="downleftright">
-                                <div className="totalmoney"><p>Money saved already: </p><p className="totalmoneytext">6000$</p></div>
-                                <div className="toreach"><p>To reach your goal you need :</p> <p className="torachmoney">8000$</p></div>
+                                <div className="totalmoney"><p>Money saved already: </p><p className="totalmoneytext">{value}$</p></div>
+                                <div className="toreach"><p>To reach your goal you need :</p> <p className="torachmoney">{remainingValue}$</p></div>
 
 
                             </div>
@@ -100,8 +102,13 @@ const Challanges = () => {
 
                     </div>
                     <div className="DownRight">
-
-
+                        <div className="progress-container">
+                            <div className="progress-bar" style={{ height: `${percentageSaved}%` }}></div>
+                            <div className="car-image"></div> {/* Obraz samochodu */}
+                        </div>
+                        <div className="text">
+                            <p className="Currenttext">Fill the entire car</p>
+                        </div>
                     </div>
 
                 </div>
