@@ -86,6 +86,65 @@ app.post('/login', async (req, res) => {
 });
 
 
+app.post('/value', async (req, res) => {
+
+  const client = new MongoClient(uri);
+  const { userId, value } = req.body;
+
+  if (!userId || value === undefined) {
+    return res.status(400).send('userId and value are required');
+  }
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+
+    // Znajdź użytkownika o podanym userId i zaktualizuj pole value
+    const result = await users.updateOne({ user_id: userId }, { $set: { value: value } });
+
+    if (result.matchedCount === 0) {
+      return res.status(404).send('User not found');
+    }
+
+    res.status(200).send('Value updated successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    // Zawsze zamknij połączenie z klientem, gdy skończysz
+    await client.close();
+  }
+});
+
+
+app.get('/value/:userId', async (req, res) => {
+  const client = new MongoClient(uri);
+  const { userId } = req.params;
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+    const user = await users.findOne({ user_id: userId });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    res.status(200).json({ value: user.value });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    await client.close();
+  }
+});
+
+
+
+
+
 
 
 

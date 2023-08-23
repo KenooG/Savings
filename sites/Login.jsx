@@ -26,6 +26,8 @@ const Login = () => {
               localStorage.setItem('token', response.data.token);
               localStorage.setItem('userId', response.data.userId);
               localStorage.setItem('name', response.data.name);
+              localStorage.setItem("value", response.data.value);
+
 
 
               navigate("/site"); // Przekieruj użytkownika do głównego panelu/dashboardu po pomyślnym zalogowaniu
