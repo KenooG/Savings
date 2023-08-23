@@ -7,7 +7,7 @@ import axios from "axios";
 
 const Challanges = () => {
 
-
+    const [totalValue, setTotalValue] = useState(0);
     const [value, SetValue] = useState(0);
     const [inputValue, setInputValue] = useState('');
     useEffect(() => {
@@ -16,6 +16,7 @@ const Challanges = () => {
                 const userId = localStorage.getItem('userId');
                 const response = await axios.get(`http://localhost:8000/value/${userId}`);
                 SetValue(response.data.value);
+                setTotalValue(response.data.total_value);
             } catch (error) {
                 console.error('Błąd podczas pobierania wartości z serwera:', error);
             }
@@ -33,10 +34,18 @@ const Challanges = () => {
      console.log("Wprowadzona wartość:", inputValue);
      console.log("Aktualna wartość przed dodaniem:", value);
      const numericInputValue = parseFloat(inputValue);
+     console.log("numericInputValue:", numericInputValue);
+     console.log("totalValue przed aktualizacją:", totalValue);
      const numericValue = isNaN(value) ? 0 : value;
      const updatedValue = numericValue + numericInputValue;
      console.log("Zaktualizowana wartość:", updatedValue);
+
+
+     const updatedTotalValue = (isNaN(totalValue) ? 0 : totalValue) + numericInputValue;
+     setTotalValue(updatedTotalValue);
+
      SetValue(updatedValue);
+
 
 
      // Zaktualizuj wartość w localStorage
@@ -44,6 +53,12 @@ const Challanges = () => {
 
      // Pobierz userId z localStorage
      const userId = localStorage.getItem('userId');
+     try {
+         await axios.post('http://localhost:8000/total_value', { userId: localStorage.getItem('userId'), total_value: updatedTotalValue });
+         console.log('Całkowita wartość zaktualizowana pomyślnie');
+     } catch (error) {
+         console.error('Wystąpił błąd podczas aktualizacji całkowitej wartości:', error);
+     }
 
      // Wyślij zaktualizowaną wartość na serwer
      try {
@@ -80,6 +95,7 @@ const Challanges = () => {
 
     return (
             <>
+
                 <div className="Challange_Des">
                     <p className="SavingGoal1">You are saving for : Dream Car</p>
                     <div className="SavingGoal2">

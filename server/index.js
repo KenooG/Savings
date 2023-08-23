@@ -40,6 +40,8 @@ app.post('/signup', async (req, res) => {
       email: sanitizedEmail,
       hashed_password: hashedPassword,
       value: 0,
+      target_value: 0,
+      total_value: 0,
     };
 
     const insertedUser = await users.insertOne(data);
@@ -132,7 +134,7 @@ app.get('/value/:userId', async (req, res) => {
       return res.status(404).send('User not found');
     }
 
-    res.status(200).json({ value: user.value });
+    res.status(200).json({ value: user.value, total_value: user.total_value });
   } catch (err) {
     console.log(err);
     res.status(500).send('internal server error');
@@ -140,6 +142,37 @@ app.get('/value/:userId', async (req, res) => {
     await client.close();
   }
 });
+
+app.post('/total_value', async (req, res) => {
+  const client = new MongoClient(uri);
+  const { userId, total_value } = req.body;
+
+  if (!userId || total_value === undefined) {
+    return res.status(400).send('userId and total_value are required');
+  }
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+
+    // Znajdź użytkownika o podanym userId i zaktualizuj pole total_value
+    const result = await users.updateOne({ user_id: userId }, { $set: { total_value: total_value } });
+
+    if (result.matchedCount === 0) {
+      return res.status(404).send('User not found');
+    }
+
+    res.status(200).send('Total value updated successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    // Zawsze zamknij połączenie z klientem, gdy skończysz
+    await client.close();
+  }
+});
+
 
 
 
