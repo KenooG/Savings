@@ -17,7 +17,7 @@ $accent: #b13535;
 }
 
 .MainBox {
-  background-image: linear-gradient(32deg, #EBCD99, #EBE3C9);
+  background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
   width: 100vw;
   height: 100px;
   display: flex;
@@ -93,7 +93,7 @@ $accent: #b13535;
 
       text-decoration: none;
       font-size: 1.4rem;
-      color: $text;
+      color: black;
       font-family: 'Roboto', sans-serif;
       font-weight: normal;
       text-align: center;
@@ -196,7 +196,7 @@ $accent: #b13535;
     font-size: 2rem;
     display: inline-block;
     padding: 10px 40px;
-    background-image: linear-gradient(32deg, #EBCD99, #EBE3C9);
+    background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
     text-align: center;
     border-radius: 10px;
     border: 1.5px solid black;
