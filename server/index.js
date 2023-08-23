@@ -175,6 +175,24 @@ app.post('/total_value', async (req, res) => {
 
 
 
+app.get('/best-savers', async (req, res) => {
+  const client = new MongoClient(uri);
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+
+    // Pobierz 4 najlepszych oszczędzających, sortując według total_value malejąco
+    const bestSavers = await users.find().sort({ total_value: -1 }).limit(5).toArray();
+    res.json(bestSavers);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    await client.close();
+  }
+});
+
 
 
 

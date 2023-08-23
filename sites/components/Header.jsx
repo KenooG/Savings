@@ -10,7 +10,7 @@ const Header = () => {
       </div>
       <div className="nav">
         <div className="nav_btn">
-          <a href="" className="nav_click">
+          <a href="/best" className="nav_click">
             Best Savers
           </a>
         </div>

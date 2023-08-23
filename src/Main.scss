@@ -1253,3 +1253,148 @@ span{
   margin-bottom: 40px;
   font-weight: bold;
 }
+
+.BestSavers{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .Head{
+    width: 100%;
+    height:150px;
+    background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+      text-decoration: none;
+      p{
+        font-size: 1.5rem;
+
+
+
+
+
+      }
+
+    }
+    .logobox{
+      display: flex;
+ flex-direction: column;
+align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+
+    }
+
+
+    .logo{
+      width: 100px;
+      height: 100px;
+      background-image: url(../source/swinka.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+
+
+    }
+    .logotextdiv{
+    width: 200px;
+      height: 30px;
+      margin-top: 5px;
+.logotext{
+  margin: 0;
+  text-align: center;
+
+}
+
+    }
+
+
+p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  margin-right: 800px;
+
+  }
+  }
+.BestContainer{
+  width: 900px;
+
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+.BestPpl{
+  margin-top: 30px;
+  width: 800px;
+  height: 300px;
+  background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .left{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      font-size: 2rem;
+
+    }
+  }
+  .right{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 200px;
+
+    p{
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      margin: 0;
+
+
+    }
+    .SaverName{
+      font-size: 3rem;
+      margin-bottom: 20px;
+
+
+    }
+    .SavedMoney{
+      font-size: 1.5rem;
+
+
+    }
+    .SaverTotalValue{
+      font-size: 2rem;
+      margin-top: 30px;
+
+    }
+
+
+  }
+
+}
+}
+
+
+
+
+}

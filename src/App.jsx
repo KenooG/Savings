@@ -5,6 +5,7 @@ import Login from "../sites/Login.jsx";
 import Register from "../sites/Register.jsx";
 import {StoreProvider} from "easy-peasy";
 import Site from "../sites/Site.jsx";
+import BestSavers from "../sites/components/SiteComponents/BestSavers.jsx";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/login" element={<Login/>} />
                     <Route path="/register" element={<Register/>} />
                     <Route path="/site" element={<Site/>} />
+                    <Route path="/best" element={<BestSavers/>} />
                 </Routes>
             </BrowserRouter>
 
