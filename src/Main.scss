@@ -1228,8 +1228,7 @@ span{
 .progress-bar {
   position: absolute;
   bottom: 0;
-  width: 100%;
-  height: 5%; /* Początkowa wysokość */
+  width: 100%; /* Początkowa wysokość */
   background-color: #4caf50; /* Kolor paska */
   transition: height 0.5s ease;
   z-index: 1; /* Pasek jest poniżej obrazu samochodu */

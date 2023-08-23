@@ -27,6 +27,9 @@ const Challanges = () => {
  const HandleSubmit = async (e) => {
      e.preventDefault();
 
+
+
+
      console.log("Wprowadzona wartość:", inputValue);
      console.log("Aktualna wartość przed dodaniem:", value);
      const numericInputValue = parseFloat(inputValue);
@@ -49,17 +52,33 @@ const Challanges = () => {
      } catch (error) {
          console.error('Wystąpił błąd podczas aktualizacji wartości:', error);
      }
+     if (percentageSaved >= 100) {
+         SetValue(0);
+         localStorage.setItem('value', '0'); // Resetuj wartość w localStorage
+
+         // Opcjonalnie: możesz również zresetować wartość na serwerze
+         try {
+             await axios.post('http://localhost:8000/value', { userId, value: 0 });
+             console.log('Wartość zresetowana pomyślnie');
+         } catch (error) {
+             console.error('Wystąpił błąd podczas resetowania wartości:', error);
+         }
+     }
 
      // Opcjonalnie: wyczyść inputValue, aby użytkownik mógł wprowadzić nową wartość
      setInputValue('');
  };
 
 
+
     const targetValue = 10000; // Wartość docelowa
     const remainingValue = targetValue - value;
     const percentageSaved = ((value / targetValue) * 100).toFixed(2);
+    const minHeight = 10; // Minimalna wysokość paska postępu w procentach
+    const maxHeight = 83;
+    const calculatedHeight = minHeight + (maxHeight - minHeight) * (percentageSaved / 100);
 
-        return (
+    return (
             <>
                 <div className="Challange_Des">
                     <p className="SavingGoal1">You are saving for : Dream Car</p>
@@ -103,7 +122,7 @@ const Challanges = () => {
                     </div>
                     <div className="DownRight">
                         <div className="progress-container">
-                            <div className="progress-bar" style={{ height: `${percentageSaved}%` }}></div>
+                            <div className="progress-bar" style={{ height: `${calculatedHeight}%`}}></div>
                             <div className="car-image"></div> {/* Obraz samochodu */}
                         </div>
                         <div className="text">
