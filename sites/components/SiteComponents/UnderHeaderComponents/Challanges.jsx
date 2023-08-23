@@ -48,10 +48,10 @@ const Challanges = () => {
 
 
 
-     // Zaktualizuj wartość w localStorage
+
      localStorage.setItem('value', updatedValue.toString());
 
-     // Pobierz userId z localStorage
+
      const userId = localStorage.getItem('userId');
      try {
          await axios.post('http://localhost:8000/total_value', { userId: localStorage.getItem('userId'), total_value: updatedTotalValue });
@@ -60,7 +60,7 @@ const Challanges = () => {
          console.error('Wystąpił błąd podczas aktualizacji całkowitej wartości:', error);
      }
 
-     // Wyślij zaktualizowaną wartość na serwer
+
      try {
          await axios.post('http://localhost:8000/value', { userId, value: updatedValue });
          console.log('Wartość zaktualizowana pomyślnie');
@@ -69,9 +69,9 @@ const Challanges = () => {
      }
      if (percentageSaved >= 100) {
          SetValue(0);
-         localStorage.setItem('value', '0'); // Resetuj wartość w localStorage
+         localStorage.setItem('value', '0');
 
-         // Opcjonalnie: możesz również zresetować wartość na serwerze
+
          try {
              await axios.post('http://localhost:8000/value', { userId, value: 0 });
              console.log('Wartość zresetowana pomyślnie');
@@ -80,16 +80,16 @@ const Challanges = () => {
          }
      }
 
-     // Opcjonalnie: wyczyść inputValue, aby użytkownik mógł wprowadzić nową wartość
+
      setInputValue('');
  };
 
 
 
-    const targetValue = 10000; // Wartość docelowa
+    const targetValue = 10000;
     const remainingValue = targetValue - value;
     const percentageSaved = ((value / targetValue) * 100).toFixed(2);
-    const minHeight = 10; // Minimalna wysokość paska postępu w procentach
+    const minHeight = 10;
     const maxHeight = 83;
     const calculatedHeight = minHeight + (maxHeight - minHeight) * (percentageSaved / 100);
 
@@ -139,7 +139,7 @@ const Challanges = () => {
                     <div className="DownRight">
                         <div className="progress-container">
                             <div className="progress-bar" style={{ height: `${calculatedHeight}%`}}></div>
-                            <div className="car-image"></div> {/* Obraz samochodu */}
+                            <div className="car-image"></div>
                         </div>
                         <div className="text">
                             <p className="Currenttext">Fill the entire car</p>

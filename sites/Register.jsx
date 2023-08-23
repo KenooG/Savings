@@ -21,7 +21,7 @@ const Register = () => {
         setTimeout(() => {
 
           navigate("/login");
-        }, 2000); // Czekaj 2000 milisekund, czyli 2 sekundy
+        }, 2000);
       }
 
 

@@ -15,7 +15,7 @@ const RandomQuote = () => {
     useEffect(() => {
         const selectedQuote = quotes[Math.floor(Math.random() * quotes.length)];
         setRandomQuote(selectedQuote);
-    }, []); // Pusty tabliczka zależności, aby uruchomić tylko raz, gdy komponent jest montowany
+    }, []);
 
     return (
         <div className="quote-container">

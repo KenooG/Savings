@@ -22,7 +22,7 @@ const Login = () => {
           const response = await axios.post('http://localhost:8000/login', { email, pass });
 
           if (response.status === 200) {
-              // Zapisz token w odpowiednim miejscu (np. w localStorage lub w stanie aplikacji)
+
               localStorage.setItem('token', response.data.token);
               localStorage.setItem('userId', response.data.userId);
               localStorage.setItem('name', response.data.name);
@@ -30,11 +30,11 @@ const Login = () => {
 
 
 
-              navigate("/site"); // Przekieruj użytkownika do głównego panelu/dashboardu po pomyślnym zalogowaniu
+              navigate("/site");
           }
 
       } catch (error) {
-          setHasError(true);  // Ustaw flagę błędu, jeśli coś poszło nie tak
+          setHasError(true);
       }
   };
 

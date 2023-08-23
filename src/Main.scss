@@ -117,27 +117,27 @@ $accent: #b13535;
     content: "";
     position: absolute;
     top: 50%;
-    height: 50px; // Wysokość kreski
-    width: 2px; // Szerokość kreski
+    height: 50px;
+    width: 2px;
     background-color: black;
     transform: translateY(-50%);
-    opacity: 0; // Ukryj kreski domyślnie
-    transition: opacity 0.3s ease; // Dodaj płynne przejście
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   &::before {
     left: 0;
-    margin-left: -10px; // Odległość kreski od guzika
+    margin-left: -10px;
   }
 
   &::after {
     right: 0;
-    margin-right: -10px; // Odległość kreski od guzika
+    margin-right: -10px;
   }
 
   &:hover {
     &::before, &::after {
-      opacity: 1; // Pokaż kreski po najechaniu myszką
+      opacity: 1;
 
     }
 
@@ -304,8 +304,8 @@ $accent: #b13535;
     content: "";
     position: absolute;
 
-    height: 50px; // Wysokość kreski
-    width: 50px; // Szerokość kreski
+    height: 50px;
+    width: 50px;
     transform: translateY(-50%);
     background-image: url(../source/more.png);
     background-size: cover;
@@ -776,7 +776,7 @@ $accent: #b13535;
       transform: translateX(-60px);
       width: 1px;
       height: 123px;
-      background-color: white; // biała kreska
+      background-color: white;
     }
   }
 
@@ -817,13 +817,13 @@ $accent: #b13535;
   position: relative;
 
   &::before {
-    content: "";  // To jest konieczne dla pseudoelementu
+    content: "";
     position: absolute;
-    top: -1.5px;  // Dostosuj tę wartość, aby przesunąć border wyżej
+    top: -1.5px;
     left: 0;
     right: 0;
     height: 1px;
-    background-color: white;  // Kolor pseudoelementu, który działa jako "sztuczny" border
+    background-color: white;
   }
   a {
     text-decoration: none;
@@ -1228,10 +1228,10 @@ span{
 .progress-bar {
   position: absolute;
   bottom: 0;
-  width: 100%; /* Początkowa wysokość */
-  background-color: #4caf50; /* Kolor paska */
+  width: 100%;
+  background-color: #4caf50;
   transition: height 0.5s ease;
-  z-index: 1; /* Pasek jest poniżej obrazu samochodu */
+  z-index: 1;
 
 }
 
@@ -1243,7 +1243,7 @@ span{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: 2; /* Obraz samochodu jest na wierzchu */
+  z-index: 2;
 }
 
 .Currenttext{

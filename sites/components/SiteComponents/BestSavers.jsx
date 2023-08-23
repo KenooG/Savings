@@ -18,7 +18,7 @@ const BestSavers = () => {
         fetchBestSavers();
     }, []);
 
-    // Reszta komponentu, w tym renderowanie najlepszych oszczędzających
+
 
 
     return(
@@ -37,7 +37,7 @@ const BestSavers = () => {
                {bestSavers.map((saver, index) => (
                    <div className="BestPpl" key={index}>
                        <div className="left">
-                       <p className="SaverRank">{index + 1}</p> {/* Numer miejsca */}
+                       <p className="SaverRank">{index + 1}</p> {}
                        </div> <div className="right">
                        <p className="SaverName">{saver.name}</p>
                        <p className="SavedMoney">Total money saved:</p>
