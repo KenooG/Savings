@@ -1331,7 +1331,7 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 
 .BestPpl{
   margin-top: 30px;
@@ -1342,6 +1342,7 @@ p{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
   .left{
     width: 300px;
     height: 300px;
