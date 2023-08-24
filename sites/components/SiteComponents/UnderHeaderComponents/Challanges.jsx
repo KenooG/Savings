@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import CurrentDate from './CurrentDate';
 import RandomQuote from "./RandomQuote.jsx";
 import axios from "axios";
+import Target from "./Target.jsx";
 
 
 
 const Challanges = () => {
-
+    const [isTargetSet, setIsTargetSet] = useState(false);
+    const [targetValue, setTargetValue] = useState(10000);
     const [totalValue, setTotalValue] = useState(0);
     const [value, SetValue] = useState(0);
     const [inputValue, setInputValue] = useState('');
@@ -86,16 +88,16 @@ const Challanges = () => {
 
 
 
-    const targetValue = 10000;
+
     const remainingValue = targetValue - value;
-    const percentageSaved = ((value / targetValue) * 100).toFixed(2);
+    const percentageSaved = targetValue !== 0 ? ((value / targetValue) * 100).toFixed(2) : 0;
     const minHeight = 10;
     const maxHeight = 83;
     const calculatedHeight = minHeight + (maxHeight - minHeight) * (percentageSaved / 100);
 
     return (
             <>
-
+                {(percentageSaved == 0 || targetValue == 0) && <Target percentageSaved={percentageSaved} targetValue={targetValue} setTargetValue={setTargetValue} />}
                 <div className="Challange_Des">
                     <p className="SavingGoal1">You are saving for : Dream Car</p>
                     <div className="SavingGoal2">

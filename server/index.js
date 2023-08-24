@@ -193,6 +193,49 @@ app.get('/best-savers', async (req, res) => {
   }
 });
 
+app.post('/target', async (req, res) => {
+  const client = new MongoClient(uri);
+  const { userId, target_value } = req.body;
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+    const result = await users.updateOne({ user_id: userId }, { $set: { target_value: target_value } });
+    res.status(200).send('Target value updated successfully');
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    await client.close();
+  }
+});
+
+app.get('/target/:userId', async (req, res) => {
+  const client = new MongoClient(uri);
+  const { userId } = req.params;
+
+  try {
+    await client.connect();
+    const database = client.db('app-data');
+    const users = database.collection('users');
+    const user = await users.findOne({ user_id: userId });
+
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+
+    res.status(200).json({ target_value: user.target_value });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('internal server error');
+  } finally {
+    await client.close();
+  }
+});
+
+
+
 
 
 

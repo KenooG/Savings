@@ -1395,7 +1395,83 @@ p{
 }
 }
 
+}
 
 
+.target-container {
+  position: absolute;
+  z-index: 999;
+  width: 500px;
+  height: 300px;
 
+
+  .Target {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 55px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0,);
+    z-index: 5;
+
+
+    label {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .labelcontainer {
+      display: flex;
+      justify-content: center;
+      transform: translateX(11px);
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      font-family: 'Roboto', sans-serif;
+      width: 100px;
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+      -moz-appearance: textfield;
+
+    }
+
+    .dollar-sign {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2rem;
+      padding-left: 5px;
+      color: #55cc48;
+      transform: translateY(3.5px);
+
+    }
+
+    button {
+      font-family: 'Roboto', sans-serif;
+      width: 100px;
+      padding: 10px 20px;
+      background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-image: linear-gradient(to left, rgb(51, 139, 147), rgb(182, 244, 146));
+    }
+  }
 }
