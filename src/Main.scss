@@ -675,7 +675,7 @@ $accent: #b13535;
   transform: translateY(81px);
 }
 
-.errorLogin{
+.errorLogin {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -686,7 +686,8 @@ $accent: #b13535;
 
 
 }
-.succesLogin{
+
+.succesLogin {
 
   position: absolute;
   margin-left: auto;
@@ -699,7 +700,7 @@ $accent: #b13535;
 
 }
 
-.Site_MainBox{
+.Site_MainBox {
   background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
   width: calc(100vw - 2px);
   height: 120px;
@@ -708,210 +709,216 @@ $accent: #b13535;
   align-items: center;
   border: 1px solid #333;
   border-bottom: 1px solid white;
-.Hello_Box{
-  display: flex;
-  width: 700px;
-  height: 100px;
-  margin-left: 60px;
-  align-items: center;
 
-  .main{
-    text-decoration: none;
-  }
-  .logo{
-    margin-top: 17px;
-   width: 120px;
-    height: 120px;
+  .Hello_Box {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
+    width: 700px;
+    height: 100px;
+    margin-left: 60px;
     align-items: center;
 
-    .logoup{
-      width: 80px;
-      height: 80px;
-      background: url("../source/swinka.png");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-right: 20px;
+    .main {
+      text-decoration: none;
+    }
 
+    .logo {
+      margin-top: 17px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .logoup {
+        width: 80px;
+        height: 80px;
+        background: url("../source/swinka.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: 20px;
+
+
+      }
+
+      .logodown {
+        width: 130px;
+        height: 20px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        text-decoration: none;
+
+
+        .text {
+
+          font-size: 1.3rem;
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          margin-top: 0;
+          margin-bottom: 0;
+          text-decoration: none;
+
+
+        }
+      }
 
     }
-    .logodown{
-      width: 130px;
-      height: 20px;
-      margin-top: 8px;
-      margin-bottom: 15px;
+
+    .Hello {
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      font-size: 1.5rem;
+      word-spacing: 3px;
+      margin-left: 100px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-60px);
+        width: 1px;
+        height: 123px;
+        background-color: white;
+      }
+    }
+
+
+  }
+
+  .Clock {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 45px;
+    font-size: 1.4rem;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+
+    .TimeA {
+      letter-spacing: 2px;
+      margin-right: 50px;
+
+    }
+
+    .Time {
+
+      font-size: 1.6rem;
+      font-family: 'Roboto', sans-serif;
+
+    }
+  }
+}
+
+.Main_UnderHeader {
+  width: 100vw;
+  height: calc(100vh - 122px);
+  display: flex;
+
+  .left {
+    width: 221px;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgb(51, 139, 147), rgb(182, 244, 146));
+    border-right: 1px solid white;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1.5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: white;
+    }
+
+    a {
       text-decoration: none;
 
+    }
 
-      .text{
+    .btn {
+      display: flex;
+      width: 200px;
+      height: 80px;
+      justify-content: center;
+      align-items: center;
 
-        font-size: 1.3rem;
-        font-family: 'Roboto', sans-serif;
+      &:hover {
+        .text {
+
+
+        }
+
+        background-color: rgba(211, 211, 211, 0.1);
+        border-radius: 30px;
+
+      }
+
+
+      .text {
+        font-size: 1.5rem;
         color: white;
-        margin-top: 0;
-        margin-bottom: 0;
-        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
 
 
       }
     }
 
-  }
+    .leftm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      width: 221px;
+      height: calc(100% - 70px);
+      margin-top: 70px;
 
-  .Hello{
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 1.5rem;
-    word-spacing: 3px;
-    margin-left: 100px;
+      .btn1 {
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      transform: translateX(-60px);
-      width: 1px;
-      height: 123px;
-      background-color: white;
-    }
-  }
+        background-color: rgba(211, 211, 211, 0.1);
+        border-radius: 30px;
 
-
-}
-.Clock{
-  width: 300px;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 45px;
-  font-size: 1.4rem;
-  font-family: 'Roboto', sans-serif;
-  align-items: center;
-
-.TimeA{
-  letter-spacing: 2px;
-  margin-right: 50px;
-
-}
-  .Time{
-
-    font-size: 1.6rem;
-    font-family: 'Roboto', sans-serif;
-
-  }
-}
-}
-.Main_UnderHeader{
-  width: 100vw;
-  height: calc(100vh - 122px);
-  display: flex;
-
-.left{
-  width: 221px;
-  height: 100%;
-  background-image: linear-gradient(to bottom, rgb(51, 139, 147), rgb(182, 244, 146));
-  border-right: 1px solid white;
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: -1.5px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: white;
-  }
-  a {
-    text-decoration: none;
-
-  }
-
-.btn{
-  display: flex;
-  width: 200px;
-  height: 80px;
-  justify-content: center;
-  align-items: center;
-  &:hover{
-    .text {
-
-
+      }
     }
 
-    background-color: rgba(211, 211, 211, 0.1);
-    border-radius: 30px;
 
   }
 
-
-.text{
-  font-size: 1.5rem;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
-
-
-
-}
-}
-  .leftm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    width: 221px;
-    height: calc(100% - 70px);
-    margin-top: 70px;
-
-    .btn1{
-
-      background-color: rgba(211, 211, 211, 0.1);
-      border-radius: 30px;
-
-    }
-  }
-
-
-
-
-}
-.right{
-  width: 1700px;
-  height: 100%;
-  background-image: url(../source/brown.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  .rightMain{
-    width: 1550px;
-    height: 800px;
-    background-color: #fff;
-    border-radius: 30px;
+  .right {
+    width: 1700px;
+    height: 100%;
+    background-image: url(../source/brown.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    
+
+    .rightMain {
+      width: 1550px;
+      height: 800px;
+      background-color: #fff;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 30px;
+
+    }
+
+
   }
 
 
 }
 
-  
-  
-}
 
-
-.Challange_Des{
+.Challange_Des {
 
   height: 100px;
   width: 1450px;
@@ -920,31 +927,35 @@ $accent: #b13535;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  p{
+
+  p {
     color: white;
     font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
 
   }
-  .SavingGoal1{
+
+  .SavingGoal1 {
     margin-left: 100px;
 
   }
-  .SavingGoal2{
+
+  .SavingGoal2 {
     margin-right: 140px;
     display: flex;
     justify-content: center;
     gap: 7px;
-    .SG2{
+
+    .SG2 {
       color: #55cc48;
     }
 
   }
 
 
-
 }
-.ChallangeDown{
+
+.ChallangeDown {
   height: 600px;
   width: 1450px;
 
@@ -953,7 +964,7 @@ $accent: #b13535;
   justify-content: space-between;
   align-items: center;
 
-  .DownLeft{
+  .DownLeft {
     width: 900px;
     height: 600px;
 
@@ -961,7 +972,8 @@ $accent: #b13535;
     flex-direction: column;
     align-items: center;
     margin-right: 45px;
-    .up{
+
+    .up {
       width: 900px;
       height: 100px;
 
@@ -978,7 +990,8 @@ $accent: #b13535;
         background-color: black;
         border-radius: 30px;
       }
-      .quote-text{
+
+      .quote-text {
         font-size: 1.3rem;
         font-family: 'Roboto', sans-serif;
         text-align: center;
@@ -988,7 +1001,8 @@ $accent: #b13535;
 
 
     }
-    .down{
+
+    .down {
       margin-top: 30px;
       width: 900px;
       height: 450px;
@@ -997,7 +1011,8 @@ $accent: #b13535;
       justify-content: space-between;
 
     }
-    .downleft{
+
+    .downleft {
       margin-top: 30px;
       width: 450px;
       height: 450px;
@@ -1006,7 +1021,8 @@ $accent: #b13535;
       align-items: center;
 
     }
-    .downleftright{
+
+    .downleftright {
       width: 400px;
       height: 450px;
 
@@ -1015,12 +1031,13 @@ $accent: #b13535;
       align-items: center;
       flex-direction: column;
       gap: 20px;
-      .totalmoney{
+
+      .totalmoney {
         width: 400px;
         height: 200px;
-margin-top: 65px;
+        margin-top: 65px;
         text-align: center;
-        font-size: 1.5rem ;
+        font-size: 1.5rem;
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
 
@@ -1028,6 +1045,7 @@ margin-top: 65px;
         flex-direction: column;
         align-items: center;
         position: relative;
+
         &::after {
           content: '';
           position: absolute;
@@ -1037,37 +1055,42 @@ margin-top: 65px;
           border-radius: 30px;
           transform: translateY(116px);
         }
-p{
-  margin: 0;
+
+        p {
+          margin: 0;
+
+
+        }
+
+        .totalmoneytext {
+          margin-top: 10px;
+          font-weight: normal;
+        }
 
 
       }
-.totalmoneytext{
-  margin-top: 10px;
-  font-weight: normal;
-}
 
-
-      }
-      .toreach{
+      .toreach {
         margin-top: 10px;
         width: 400px;
         height: 200px;
-margin-bottom: 50px;
+        margin-bottom: 50px;
         text-align: center;
-        font-size: 1.5rem ;
+        font-size: 1.5rem;
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-        p{
+
+        p {
           margin: 0;
 
 
         }
-        .torachmoney{
+
+        .torachmoney {
           margin-top: 10px;
           font-weight: normal;
         }
@@ -1091,7 +1114,8 @@ margin-bottom: 50px;
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .formulasz{
+
+    .formulasz {
       width: 100%;
       height: 100%;
       display: flex;
@@ -1109,7 +1133,8 @@ margin-bottom: 50px;
       font-weight: bold;
       margin-bottom: 10px;
     }
-    .labelcontainer{
+
+    .labelcontainer {
       display: flex;
       justify-content: center;
       transform: translateX(11px);
@@ -1123,7 +1148,7 @@ margin-bottom: 50px;
       margin: 0;
     }
 
-    input [type="number"]{
+    input [type="number"] {
       width: 30px;
       padding: 10px;
       margin-bottom: 20px;
@@ -1131,7 +1156,8 @@ margin-bottom: 50px;
       border-radius: 4px;
       -moz-appearance: textfield;
     }
-    input{
+
+    input {
       font-family: 'Roboto', sans-serif;
       width: 100px;
       padding: 5px;
@@ -1141,16 +1167,17 @@ margin-bottom: 50px;
       text-align: center;
 
 
+    }
+
+    span {
+      font-family: 'Roboto', sans-serif;
+      margin-left: 10px;
+      font-size: 1.4rem;
+      transform: translateY(3px);
+      color: #55cc48;
 
     }
-span{
-  font-family: 'Roboto', sans-serif;
-  margin-left: 10px;
-  font-size: 1.4rem;
-  transform: translateY(3px);
-  color: #55cc48;
 
-}
     button {
       font-family: 'Roboto', sans-serif;
       width: 100px;
@@ -1168,20 +1195,19 @@ span{
     }
 
 
-
   }
-
 
 
 }
 
-.datunia{
+.datunia {
   width: 400px;
   height: 100px;
   background-color: #fff;
   display: flex;
   justify-content: center;
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -1193,20 +1219,22 @@ span{
     border-radius: 30px;
   }
 
-  p{
+  p {
     font-size: 1.7rem;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-.current-date{
-  color: black;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
-  position: relative;
+
+    .current-date {
+      color: black;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      position: relative;
 
 
-}
+    }
   }
 }
+
 .DownRight {
   width: 500px;
   height: 500px;
@@ -1246,7 +1274,7 @@ span{
   z-index: 2;
 }
 
-.Currenttext{
+.Currenttext {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
   margin: 0;
@@ -1254,35 +1282,35 @@ span{
   font-weight: bold;
 }
 
-.BestSavers{
+.BestSavers {
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  .Head{
+  .Head {
     width: 100%;
-    height:150px;
+    height: 150px;
     background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
     display: flex;
     justify-content: space-between;
     align-items: center;
-    a{
+
+    a {
       text-decoration: none;
-      p{
+
+      p {
         font-size: 1.5rem;
-
-
-
 
 
       }
 
     }
-    .logobox{
+
+    .logobox {
       display: flex;
- flex-direction: column;
-align-items: center;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
       width: 300px;
       height: 300px;
@@ -1290,7 +1318,7 @@ align-items: center;
     }
 
 
-    .logo{
+    .logo {
       width: 100px;
       height: 100px;
       background-image: url(../source/swinka.png);
@@ -1299,101 +1327,109 @@ align-items: center;
       background-position: center;
 
 
-
     }
-    .logotextdiv{
-    width: 200px;
+
+    .logotextdiv {
+      width: 200px;
       height: 30px;
       margin-top: 5px;
-.logotext{
-  margin: 0;
-  text-align: center;
 
-}
+      .logotext {
+        margin: 0;
+        text-align: center;
+
+      }
 
     }
 
 
-p{
-  font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
-  margin: 0;
-  color: white;
-  font-weight: bold;
-  margin-right: 800px;
-
-  }
-  }
-.BestContainer{
-  width: 900px;
-
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-
-.BestPpl{
-  margin-top: 30px;
-  width: 800px;
-  height: 300px;
-  background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
-  border-radius: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  .left{
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    p{
+    p {
       font-family: 'Roboto', sans-serif;
+      font-size: 3rem;
+      margin: 0;
       color: white;
-      font-size: 2rem;
+      font-weight: bold;
+      margin-right: 800px;
 
     }
   }
-  .right{
-    width: 300px;
-    height: 300px;
+
+  .BestContainer {
+    width: 900px;
+
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin-right: 200px;
+    gap: 5px;
 
-    p{
-      font-family: 'Roboto', sans-serif;
-      color: white;
-      margin: 0;
-
-
-    }
-    .SaverName{
-      font-size: 3rem;
-      margin-bottom: 20px;
-
-
-    }
-    .SavedMoney{
-      font-size: 1.5rem;
-
-
-    }
-    .SaverTotalValue{
-      font-size: 2rem;
+    .BestPpl {
       margin-top: 30px;
+      width: 800px;
+      height: 300px;
+      background-image: linear-gradient(to right, rgb(51, 139, 147), rgb(182, 244, 146));
+      border-radius: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .left {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          font-size: 2rem;
+
+        }
+      }
+
+      .right {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 200px;
+
+        p {
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          margin: 0;
+
+
+        }
+
+        .SaverName {
+          font-size: 3rem;
+          margin-bottom: 20px;
+
+
+        }
+
+        .SavedMoney {
+          font-size: 1.5rem;
+
+
+        }
+
+        .SaverTotalValue {
+          font-size: 2rem;
+          margin-top: 30px;
+
+        }
+
+
+      }
 
     }
-
-
   }
-
-}
-}
 
 }
 
@@ -1475,3 +1511,4 @@ p{
     }
   }
 }
+
